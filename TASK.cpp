@@ -12,11 +12,12 @@ class PIDcontroller {
       Kp = p;
       Ki = i;
       Kd = d;
+      float integral = 0;   
       previousError = 0;
       previousTime = millis();
     }
 
-    void setpoint(float sp) {
+    void setThesetpoint(float sp) {
       setpoint = sp;
     }
 
@@ -28,7 +29,6 @@ class PIDcontroller {
 
       float error = setpoint - currentSpeed;
       
-      float integral = 0;
       integral += error * time_interval; // calculating the integration approximatly as area of rectangle
       float derivative = (error - previousError) / time_interval;  // calculate derivative as slope
 
@@ -62,7 +62,7 @@ void setup() {
     
     pinMode(motorPin, OUTPUT);
     Serial.begin(9600);
-    pid.setpoint(100); // setpoint of the PID
+    pid.setThesetpoint(100); // setpoint of the PID
 }
 
 void loop() {

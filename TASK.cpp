@@ -1,5 +1,3 @@
-const float alpha = 0.1; // Smoothing factor 
-
 float previousvalue = 0;
 
 class PIDcontroller {
@@ -46,6 +44,9 @@ class PIDcontroller {
 
 PIDcontroller pid(2.0, 0.5, 1.0); //kp , ki , kd values
 
+
+const float alpha = 0.1; // Smoothing factor 
+
 float exponential_smoothing(float data) {
     // exponential filter formula
       float smoothedValue = alpha * data + (1 - alpha) * previousvalue;
@@ -53,10 +54,12 @@ float exponential_smoothing(float data) {
     }
 
 
+
 const int motorPin = 9;    // Motor control pin
 const int velocityCalcEncoderPin = A0;  // Motor speed sensor pin or encoder or any thing that could return speed 
 
 void setup() {
+    
     pinMode(motorPin, OUTPUT);
     Serial.begin(9600);
     pid.setpoint(100); // setpoint of the PID

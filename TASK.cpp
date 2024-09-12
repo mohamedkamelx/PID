@@ -12,6 +12,7 @@ class PIDcontroller {
       Kp = p;
       Ki = i;
       Kd = d;
+      float integral = 0;   
       previousError = 0;
       previousTime = millis();
     }
@@ -28,7 +29,6 @@ class PIDcontroller {
 
       float error = setpoint - currentSpeed;
       
-      float integral = 0;
       integral += error * time_interval; // calculating the integration approximatly as area of rectangle
       float derivative = (error - previousError) / time_interval;  // calculate derivative as slope
 

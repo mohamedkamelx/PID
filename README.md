@@ -1,6 +1,7 @@
 # Arduino PID Motor Speed Control with Exponential Smoothing
 
-This code implements a PID controller to control the speed of a motor. It also includes a soft start mechanism using exponential smoothing to smooth the sensor input. The motor's speed is regulated using PWM, and the PID algorithm is used to adjust the control signal based on the error between the target and the actual speed.
+This code implements a PID controller to control the speed of a motor.the PID algorithm is used to adjust the control signal based on the error between the target and the actual speed.
+a exponential filter to smooth the signal .
 
 ## Components
 
